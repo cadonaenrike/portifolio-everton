@@ -2,20 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Variáveis para o tema claro */
 :root {
+  --Gradient-Heading: linear-gradient(90deg, #13b0f5 -2.06%, #e70faa 100%);
   --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+  --background-start-rgb: 255, 255, 255; /* Foi atualizado para #FFFF, que é equivalente a #FFFFFF */
+  --background-end-rgb: 255, 255, 255; /* Foi atualizado para #FFFF, que é equivalente a #FFFFFF */
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Variáveis para o tema escuro */
+.dark {
+  --foreground-rgb: 255, 255, 255;
+  --background-start-rgb: 17, 24, 39; /* gray-800 é equivalente a #111827 em hexadecimal */
+  --background-end-rgb: 17, 24, 39; /* gray-800 é equivalente a #111827 em hexadecimal */
 }
 
+/* Estilos para o corpo da página */
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -24,4 +26,13 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Media query para preferência de tema do sistema */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
 }
