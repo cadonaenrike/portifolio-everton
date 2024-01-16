@@ -31,9 +31,11 @@ export const Tecnologias = () => {
     { name: "NPM", icon: <FaNpm color="#CB3837" /> },
   ];
 
-  // Dividir os ícones em linhas com 5 ícones cada
+  // Defina o número de ícones por linha com base no tamanho da tela
+
   const rows = techs.reduce<Tech[][]>((all, one, i) => {
-    const ch = Math.floor(i / 5);
+    const ch = Math.floor(i);
+    //@ts-ignore
     all[ch] = [].concat(all[ch] || [], one);
     return all;
   }, []);
