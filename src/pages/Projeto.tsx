@@ -24,16 +24,18 @@ const ProjetosPage = () => {
     >
       <Navbar />
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
-        <section className={`mb-6 md:mb-10 ${bgColorClass}`}>
+        <section className={`pb-8 md:mb-10 ${bgColorClass}`}>
           <h1
-            className={`text-[#8e90f8] font-poppins text-3xl md:text-5xl font-bold leading-tight mb-4 ${textColorClass}`}
+            className={`text-[#8e90f8] text-center font-poppins text-3xl md:text-5xl font-bold leading-tight mb-4 ${textColorClass}`}
           >
             Projetos
           </h1>
           <p
-            className={`text-[var(--dark-content,#666)] font-poppins text-base md:text-lg font-normal leading-relaxed ${textColorClass}`}
+            className={`text-[var(--dark-content,#666)] pt-4 font-poppins text-lg font-semibold text-center md:text-lg font-normal leading-relaxed ${textColorClass}`}
           >
-            Aqui estão alguns dos projetos que desenvolvi:
+            Apresento abaixo alguns dos projetos que tive a oportunidade de
+            criar, demonstrando a diversidade de tecnologias que domino e as
+            soluções que desenvolvi.
           </p>
         </section>
 

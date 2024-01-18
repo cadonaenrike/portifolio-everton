@@ -1,52 +1,76 @@
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaBootstrap,
-  FaNodeJs,
-  FaGitAlt,
-  FaNpm,
-} from "react-icons/fa";
-import { SiTailwindcss, SiTypescript } from "react-icons/si";
+import { techs } from "@/base/TecnologiasInfos";
+import { useState, useEffect } from "react";
 
-// Definição da interface Tech
 interface Tech {
   name: string;
   icon: JSX.Element;
 }
 
 export const Tecnologias = () => {
-  // Lista de tecnologias
-  const techs: Tech[] = [
-    { name: "HTML5", icon: <FaHtml5 color="#E34F26" /> },
-    { name: "CSS3", icon: <FaCss3Alt color="#1572B6" /> },
-    { name: "JavaScript", icon: <FaJsSquare color="#F7DF1E" /> },
-    { name: "React", icon: <FaReact color="#61DAFB" /> },
-    { name: "Bootstrap", icon: <FaBootstrap color="#7952B3" /> },
-    { name: "Tailwind CSS", icon: <SiTailwindcss color="#38B2AC" /> },
-    { name: "Node.js", icon: <FaNodeJs color="#339933" /> },
-    { name: "TypeScript", icon: <SiTypescript color="#3178C6" /> },
-    { name: "Git", icon: <FaGitAlt color="#F05032" /> },
-    { name: "NPM", icon: <FaNpm color="#CB3837" /> },
-  ];
+  const [windowWidth, setWindowWidth] = useState<number>(0);
+  const [iconSize, setIconSize] = useState<number>(48); // Tamanho inicial dos ícones
+  const [textSize, setTextSize] = useState<number>(20); // Tamanho do texto
+  const [gapSize, setGapSize] = useState<number>(16); // Espaçamento entre os ícones
+  const [hoveredTech, setHoveredTech] = useState<string | null>(null);
 
-  // Defina o número de ícones por linha com base no tamanho da tela
+  useEffect(() => {
+    function handleResize() {
+      // Atualizar o tamanho dos ícones, texto e espaçamento com base no tamanho da tela
+      const newWindowWidth = window.innerWidth;
+      setWindowWidth(newWindowWidth);
 
-  const rows = techs.reduce<Tech[][]>((all, one, i) => {
-    const ch = Math.floor(i);
-    //@ts-ignore
-    all[ch] = [].concat(all[ch] || [], one);
-    return all;
+      if (newWindowWidth >= 1024) {
+        // Tela grande, aumente o tamanho dos ícones, texto e espaçamento
+        setIconSize(64);
+        setTextSize(24);
+        setGapSize(32);
+      } else if (newWindowWidth >= 768) {
+        // Tela média, tamanho intermediário de ícones, texto e espaçamento
+        setIconSize(56);
+        setTextSize(20);
+        setGapSize(24);
+      } else {
+        // Tela pequena, tamanho menor de ícones, texto e espaçamento
+        setIconSize(48);
+        setTextSize(16);
+        setGapSize(16);
+      }
+    }
+
+    // Lidar com redimensionamento da janela
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Chamar a função de redimensionamento uma vez para definir os valores iniciais
+
+    return () => {
+      window.removeEventListener("resize", handleResize); // Remover o ouvinte ao desmontar o componente
+    };
   }, []);
 
+  // Divida as tecnologias em grupos de 5 ícones por linha
+  const rows: Tech[][] = [];
+  for (let i = 0; i < techs.length; i += 2) {
+    rows.push(techs.slice(i, i + 2));
+  }
+
   return (
-    <div className="flex flex-wrap justify-center">
+    <div className="flex flex-wrap p-3 gap-2 justify-center">
       {rows.map((row, idx) => (
         <div key={idx} className="flex justify-center space-x-4 mb-8">
-          {row.map((tech) => (
-            <div key={tech.name} className="text-center">
-              <div className="text-9xl">{tech.icon}</div>
+          {row.map((tech, techIdx) => (
+            <div
+              key={techIdx}
+              className="text-center relative cursor-pointer transition-transform transform hover:scale-105"
+              onMouseEnter={() => setHoveredTech(tech.name)}
+              onMouseLeave={() => setHoveredTech(null)}
+            >
+              <div style={{ fontSize: textSize }}>
+                {tech.icon}
+                {hoveredTech === tech.name && (
+                  <div className="absolute rounded-2xl top-0 left-0 w-full h-full bg-black bg-opacity-75 text-white text-xl flex items-center justify-center">
+                    {tech.name}
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>

@@ -20,13 +20,13 @@ const Projeto: React.FC<ProjectCardProps> = ({
   codeUrl,
 }) => {
   return (
-    <div className="max-w-sm mx-auto md:max-w-md lg:max-w-lg rounded-3xl overflow-hidden shadow-black border-2 bg-white dark:bg-gray-800 mb-6">
+    <div className="max-w-sm mx-auto md:max-w-md lg:max-w-lg h-[700px] overflow-y-auto rounded-3xl overflow-hidden shadow-black border-2 bg-white dark:bg-gray-800 mb-6 relative">
       <Image
         src={imageUrl}
         alt="Project Image"
         width={375}
-        className="max-h-72 flex items-center justify-center self-center"
         height={260}
+        className="max-h-72 flex items-center justify-center self-center"
         objectFit="cover"
         layout="responsive"
       />
@@ -48,12 +48,12 @@ const Projeto: React.FC<ProjectCardProps> = ({
           ))}
         </div>
       </div>
-      <div className="px-6 py-4 flex flex-col md:flex-row justify-between items-center">
+      <div className="absolute bottom-0 left-0 right-0 p-4 bg-white dark:bg-gray-800 flex justify-between">
         <a
           href={livePreviewUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center text-black hover:text-red-700 transition duration-300 mb-2 md:mb-0"
+          className="flex items-center text-black hover:text-red-700 transition duration-300"
         >
           <FaEye className="inline mr-2 fill-black" />
           Live Preview

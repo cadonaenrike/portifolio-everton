@@ -25,23 +25,23 @@ const ContatoPage = () => {
       <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-6 md:py-12">
         <section className={`mb-6 md:mb-10 ${bgColorClass}`}>
           <h1
-            className={`text-[#8e90f8] font-poppins text-3xl md:text-5xl font-bold leading-tight mb-4 ${textColorClass}`}
+            className={`text-[#8e90f8] text-center pb-8 font-poppins text-3xl md:text-5xl font-bold leading-tight mb-4 ${textColorClass}`}
           >
             Entre em Contato
           </h1>
           <p
-            className={`text-[var(--dark-content,#666)] font-poppins text-base md:text-lg font-normal leading-relaxed ${textColorClass}`}
+            className={`text-[var(--dark-content,#666)] text-center font-poppins text-lg font-semibold md:text-lg font-normal leading-relaxed ${textColorClass}`}
           >
             Se preferir, entre em contato através dos ícones do menu ou clicando
             no link abaixo:
           </p>
         </section>
 
-        <section className={`mb-6 md:mb-10 ${bgColorClass}`}>
-          <p className="text-blue-500 hover:underline">
+        <section className={`mb-6 md:mb-10 text-center ${bgColorClass}`}>
+          <p className="text-blue-500 hover:none">
             <a
               href={`mailto:${email}`}
-              className="text-blue-500 hover:underline"
+              className="text-purple-600 border-4 p-2 border-blue-200 font-semibold text-xl"
             >
               Enviar um e-mail
             </a>
