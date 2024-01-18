@@ -13,7 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   };
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false}>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem={true}>
       <div className={`theme-${theme}`}>
         <Component {...pageProps} />
       </div>
