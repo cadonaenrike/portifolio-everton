@@ -31,7 +31,7 @@ const ProjetosPage = () => {
             Projetos
           </h1>
           <p
-            className={`text-[var(--dark-content,#666)] pt-4 font-poppins text-lg font-semibold text-center md:text-lg font-normal leading-relaxed ${textColorClass}`}
+            className={`text-[var(--dark-content,#666)] pt-4 font-poppins text-lg font-semibold text-center md:text-lg leading-relaxed ${textColorClass}`}
           >
             Apresento abaixo alguns dos projetos que tive a oportunidade de
             criar, demonstrando a diversidade de tecnologias que domino e as

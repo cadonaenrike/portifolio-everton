@@ -1,3 +1,4 @@
+import React, { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -12,6 +13,7 @@ import { useTheme } from "next-themes";
 
 const Navbar = () => {
   const { theme, setTheme } = useTheme();
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = () => {
     setTheme(theme === "dark" ? "light" : "dark");
@@ -24,14 +26,11 @@ const Navbar = () => {
       }`}
     >
       <div className="flex items-center space-x-4">
-        <Link href="/" passHref>
-          <p className="flex items-center shrink-0">
-            <Image src={logo} alt="Logo" width={97} height={59} />
-          </p>
-        </Link>
         <button
           onClick={toggleTheme}
-          className={`text-${theme === "dark" ? "gray-300" : "gray-666"}`}
+          className={`text-3xl ${
+            theme === "dark" ? "text-gray-300" : "text-gray-666"
+          }`}
         >
           {theme === "dark" ? (
             <FaSun className="h-6 w-6" />
@@ -39,10 +38,26 @@ const Navbar = () => {
             <FaMoon className="h-6 w-6" />
           )}
         </button>
+
+        <Link href="/" passHref>
+          <p className="flex items-center shrink-0">
+            <Image src={logo} alt="Logo" width={97} height={59} />
+          </p>
+        </Link>
+        <button
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          className={`md:hidden text-3xl ${
+            theme === "dark" ? "text-gray-300" : "text-gray-666"
+          }`}
+        >
+          ☰
+        </button>
       </div>
 
       <div
-        className={`md:flex space-x-10 mt-4 md:mt-0 ${
+        className={`${
+          isMenuOpen ? "block" : "hidden"
+        } md:flex space-x-10 mt-4 md:mt-0 ${
           theme === "dark" ? "text-gray-300" : "text-gray-666"
         }`}
       >

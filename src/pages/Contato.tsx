@@ -30,7 +30,7 @@ const ContatoPage = () => {
             Entre em Contato
           </h1>
           <p
-            className={`text-[var(--dark-content,#666)] text-center font-poppins text-lg font-semibold md:text-lg font-normal leading-relaxed ${textColorClass}`}
+            className={`text-[var(--dark-content,#666)] text-center font-poppins text-lg font-semibold md:text-lg leading-relaxed ${textColorClass}`}
           >
             Se preferir, entre em contato através dos ícones do menu ou clicando
             no link abaixo:

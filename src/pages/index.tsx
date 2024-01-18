@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import perfil from "../images/perfil.jpeg";
+import perfilHover from "../images/logo.png";
 import { Tecnologias } from "@/components/Tecnologias";
 import Projeto from "@/components/Projetos";
 import projectInfos from "@/base/projetosInfos";
@@ -9,6 +10,7 @@ import Navbar from "@/components/Navbar";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState(false);
+  const [isHovered, setIsHovered] = useState(false);
 
   // Função para verificar se a seção está visível na tela
   const handleVisibility = () => {
@@ -47,11 +49,13 @@ export default function Home() {
             Sou um desenvolvedor Fullstack
           </h1>
           <Image
-            src={perfil}
+            src={isHovered ? perfilHover : perfil} // Alterne entre as imagens com base no estado isHovered
             alt="Éverton Cadoná"
             width={300}
             height={300}
             className="rounded-full"
+            onMouseEnter={() => setIsHovered(true)} // Defina isHovered como true quando o mouse entra na imagem
+            onMouseLeave={() => setIsHovered(false)} // Defina isHovered como false quando o mouse sai da imagem
           />
         </section>
 
