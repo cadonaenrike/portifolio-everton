@@ -16,6 +16,8 @@ const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const toggleTheme = () => {
+    // Definir manualmente o tema para "light" ou "dark" aqui
+    // Isso substituirá qualquer preferência de tema do navegador ou do sistema
     setTheme(theme === "dark" ? "light" : "dark");
   };
 
