@@ -24,7 +24,7 @@ const Navbar = () => {
   return (
     <nav
       className={`flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-20 py-4 ${
-        theme === "dark" ? "bg-gray-800" : "bg-gray-100"
+        theme === "dark" ? "bg-gray-300" : "bg-gray-666"
       }`}
     >
       <div className="flex items-center space-x-4">
