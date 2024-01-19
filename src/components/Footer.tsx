@@ -10,14 +10,14 @@ const Footer = () => {
     <footer
       className={`flex-col sm:flex-row justify-between px-4 sm:px-12 py-4 sm:py-2 ${
         theme === "dark"
-          ? "bg-gray-800 text-gray-300"
+          ? "bg-gray-666 text-gray-100"
           : "bg-gray-100 text-gray-666"
       }`}
     >
       <div
         className={`flex items-center justify-between space-x-4 ${
           theme === "dark"
-            ? "bg-gray-800 text-gray-300"
+            ? "bg-gray-666 text-gray-100"
             : "bg-gray-100 text-gray-666"
         }`}
       >
@@ -28,7 +28,7 @@ const Footer = () => {
         <div className="flex flex-col sm:flex-row items-center space-x-4">
           <span
             className={`text-base sm:text-lg font-semibold ${
-              theme === "dark" ? "text-gray-300" : "text-gray-666"
+              theme === "dark" ? "text-gray-100" : "text-gray-666"
             }`}
           >
             <a
@@ -36,7 +36,7 @@ const Footer = () => {
               target="_blank"
               rel="noopener noreferrer"
               className={`${
-                theme === "dark" ? "text-gray-300" : "text-gray-666"
+                theme === "dark" ? "text-gray-100" : "text-gray-666"
               } hover:text-green-600`}
             >
               +55 51 997295482
@@ -83,7 +83,7 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={`${
-              theme === "dark" ? "text-gray-300" : "text-gray-666"
+              theme === "dark" ? "text-gray-100" : "text-gray-666"
             } hover:text-blue-700`}
           >
             <FaLinkedinIn className="mx-0 w-6 h-6 sm:w-8 sm:h-8" />
@@ -94,14 +94,14 @@ const Footer = () => {
         className="w-full my-2 sm:my-4"
         style={{
           height: "2px",
-          backgroundColor: "var(--dark-content, #666)",
+          backgroundColor: "gray-666",
           opacity: "0.3",
         }}
       />
       <div className="flex flex-col sm:flex-row justify-center items-center text-base sm:text-lg mb-4 sm:mb-10 px-4 sm:px-10">
         <p
           className={`font-semibold ${
-            theme === "dark" ? "text-gray-300" : "text-gray-666"
+            theme === "dark" ? "text-gray-100" : "text-gray-666"
           }`}
         >
           © {new Date().getFullYear()} Direitos Autorais e Design por{" "}

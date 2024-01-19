@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -20,18 +20,20 @@ const Navbar = () => {
     // Isso substituirá qualquer preferência de tema do navegador ou do sistema
     setTheme(theme === "dark" ? "light" : "dark");
   };
-
+  useEffect(() => {
+    setTheme("ligth");
+  }, [setTheme]);
   return (
     <nav
       className={`flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-20 py-4 ${
-        theme === "dark" ? "bg-gray-666" : "bg-gray-300"
+        theme === "dark" ? "bg-gray-666" : "bg-gray-100"
       }`}
     >
       <div className="flex items-center space-x-4">
         <button
           onClick={toggleTheme}
           className={`text-3xl ${
-            theme === "dark" ? "text-gray-666" : "text-gray-300"
+            theme === "dark" ? "text-gray-100" : "text-gray-666"
           }`}
         >
           {theme === "dark" ? (
@@ -49,7 +51,7 @@ const Navbar = () => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`md:hidden text-3xl ${
-            theme === "dark" ? "text-gray-666" : "text-gray-300"
+            theme === "dark" ? "text-gray-100" : "text-gray-666"
           }`}
         >
           ☰
@@ -60,7 +62,7 @@ const Navbar = () => {
         className={`${
           isMenuOpen ? "block" : "hidden"
         } md:flex space-x-10 mt-4 md:mt-0 ${
-          theme === "dark" ? "text-gray-666" : "text-gray-300"
+          theme === "dark" ? "text-gray-100" : "text-gray-666"
         }`}
       >
         <Link href="/" passHref>
@@ -95,7 +97,7 @@ const Navbar = () => {
           href="https://github.com/cadonaenrike"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
+          className={`text-${theme === "dark" ? "gray-100" : "gray-666"}`}
         >
           <FaGithub className="h-6 w-6" />
         </Link>
@@ -103,7 +105,7 @@ const Navbar = () => {
           href="https://www.instagram.com/everton_cadona/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
+          className={`text-${theme === "dark" ? "gray-100" : "gray-666"}`}
         >
           <FaInstagram className="h-6 w-6" />
         </Link>
@@ -111,7 +113,7 @@ const Navbar = () => {
           href="https://www.linkedin.com/in/everton-cadona/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
+          className={`text-${theme === "dark" ? "gray-100" : "gray-666"}`}
         >
           <FaLinkedinIn className="h-6 w-6" />
         </Link>
