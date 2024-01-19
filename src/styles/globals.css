@@ -30,11 +30,6 @@ body {
 
 /* Media query para preferência de tema do sistema */
 @media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
 }
 .animated {
   opacity: 0;
