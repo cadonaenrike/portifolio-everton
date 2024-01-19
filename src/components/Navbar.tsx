@@ -24,14 +24,14 @@ const Navbar = () => {
   return (
     <nav
       className={`flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 md:px-20 py-4 ${
-        theme === "dark" ? "bg-gray-300" : "bg-gray-666"
+        theme === "dark" ? "bg-gray-666" : "bg-gray-300"
       }`}
     >
       <div className="flex items-center space-x-4">
         <button
           onClick={toggleTheme}
           className={`text-3xl ${
-            theme === "dark" ? "text-gray-300" : "text-gray-666"
+            theme === "dark" ? "text-gray-666" : "text-gray-300"
           }`}
         >
           {theme === "dark" ? (
@@ -49,7 +49,7 @@ const Navbar = () => {
         <button
           onClick={() => setIsMenuOpen(!isMenuOpen)}
           className={`md:hidden text-3xl ${
-            theme === "dark" ? "text-gray-300" : "text-gray-666"
+            theme === "dark" ? "text-gray-666" : "text-gray-300"
           }`}
         >
           ☰
@@ -60,7 +60,7 @@ const Navbar = () => {
         className={`${
           isMenuOpen ? "block" : "hidden"
         } md:flex space-x-10 mt-4 md:mt-0 ${
-          theme === "dark" ? "text-gray-300" : "text-gray-666"
+          theme === "dark" ? "text-gray-666" : "text-gray-300"
         }`}
       >
         <Link href="/" passHref>
