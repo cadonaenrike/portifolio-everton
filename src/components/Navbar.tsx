@@ -95,7 +95,7 @@ const Navbar = () => {
           href="https://github.com/cadonaenrike"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-300" : "gray-666"}`}
+          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
         >
           <FaGithub className="h-6 w-6" />
         </Link>
@@ -103,7 +103,7 @@ const Navbar = () => {
           href="https://www.instagram.com/everton_cadona/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-300" : "gray-666"}`}
+          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
         >
           <FaInstagram className="h-6 w-6" />
         </Link>
@@ -111,7 +111,7 @@ const Navbar = () => {
           href="https://www.linkedin.com/in/everton-cadona/"
           target="_blank"
           rel="noopener noreferrer"
-          className={`text-${theme === "dark" ? "gray-300" : "gray-666"}`}
+          className={`text-${theme === "dark" ? "gray-666" : "gray-300"}`}
         >
           <FaLinkedinIn className="h-6 w-6" />
         </Link>
